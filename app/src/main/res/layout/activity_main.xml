@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:baselineAligned="false">
 
         <LinearLayout
@@ -19,41 +19,59 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="center"
-                android:padding="@dimen/pad"
-                android:text="@string/teama" />
+                android:text="@string/teama"
+                android:textColor="@color/team"
+                android:textSize="@dimen/team" />
 
             <TextView
                 android:id="@+id/team_a_score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/marginbottom"
+                android:fontFamily="sans-serif-light"
                 android:gravity="center"
-                android:padding="@dimen/pad"
-                android:text="@string/score" />
+                android:text="@string/score"
+                android:textColor="@color/score"
+                android:textSize="@dimen/score" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
+                android:layout_marginLeft="@dimen/buttonsides"
+                android:layout_marginRight="@dimen/buttonsides"
                 android:onClick="threePointsA"
                 android:text="@string/point3" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
+                android:layout_marginLeft="@dimen/buttonsides"
+                android:layout_marginRight="@dimen/buttonsides"
+                android:layout_marginTop="@dimen/buttonmargin"
                 android:onClick="twoPointsA"
                 android:text="@string/point2" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
+                android:layout_marginBottom="@dimen/buttonmargin"
+                android:layout_marginLeft="@dimen/buttonsides"
+                android:layout_marginRight="@dimen/buttonsides"
+                android:layout_marginTop="@dimen/buttonmargin"
                 android:onClick="onePointA"
                 android:text="@string/free" />
 
 
         </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/bar"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@android:color/darker_gray" />
 
         <LinearLayout
             android:layout_width="@dimen/none"
@@ -64,36 +82,48 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="center"
-                android:padding="@dimen/pad"
-                android:text="@string/teamb" />
+                android:text="@string/teamb"
+                android:textColor="@color/team"
+                android:textSize="@dimen/team" />
 
             <TextView
                 android:id="@+id/team_b_score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/marginbottom"
+                android:fontFamily="sans-serif-light"
                 android:gravity="center"
-                android:padding="@dimen/pad"
-                android:text="@string/score" />
+                android:text="@string/score"
+                android:textColor="@color/score"
+                android:textSize="@dimen/score" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
+                android:layout_marginLeft="@dimen/buttonsides"
+                android:layout_marginRight="@dimen/buttonsides"
                 android:onClick="threePointsB"
                 android:text="@string/point3" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
+                android:layout_marginLeft="@dimen/buttonsides"
+                android:layout_marginRight="@dimen/buttonsides"
+                android:layout_marginTop="@dimen/buttonmargin"
                 android:onClick="twoPointsB"
                 android:text="@string/point2" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
+                android:layout_marginBottom="@dimen/buttonmargin"
+                android:layout_marginLeft="@dimen/buttonsides"
+                android:layout_marginRight="@dimen/buttonsides"
+                android:layout_marginTop="@dimen/buttonmargin"
                 android:onClick="onePointB"
                 android:text="@string/free" />
 
@@ -106,7 +136,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="@dimen/margin"
+        android:layout_marginBottom="@dimen/reset"
         android:onClick="resetAll"
         android:text="@string/reset" />
 

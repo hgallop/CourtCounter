@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    /**
+     * Resets both scores to 0
+     */
     public void resetAll(View view) {
         scoreTeamA = 0;
         scoreTeamB = 0;
