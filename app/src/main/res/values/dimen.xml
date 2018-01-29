@@ -2,4 +2,5 @@
 <resources>
     <dimen name="pad">4dp</dimen>
     <dimen name="margin">8dp</dimen>
+    <dimen name="none">0dp</dimen>
 </resources>
