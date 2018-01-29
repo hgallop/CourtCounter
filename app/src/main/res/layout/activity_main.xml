@@ -7,30 +7,30 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/pad"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:text="@string/team" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/pad"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:text="@string/score"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin"
-        android:text="@string/point2" />
+        android:text="@string/point3" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin"
-        android:text="@string/point3"/>
+        android:text="@string/point2"/>
 
     <Button
         android:layout_width="match_parent"
