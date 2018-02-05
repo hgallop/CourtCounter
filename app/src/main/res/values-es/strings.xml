@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Contador de la Corte</string>
+    <string name="teama">Equipo A</string>
+    <string name="teamb">Equipo B</string>
+    <string name="point3">+3  Puntos</string>
+    <string name="point2">+2  Puntos</string>
+    <string name="free">Tiro libre</string>
+    <string name="reset">Reiniciar</string>
+</resources>
