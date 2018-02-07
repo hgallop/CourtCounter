@@ -57,16 +57,14 @@ public class MainActivity extends AppCompatActivity {
      * Displays the given score for Team A.
      */
     public void displayForTeamA(int score) {
-        TextView scoreView = scoreA;
-        scoreView.setText(String.valueOf(score));
+        scoreA.setText(String.valueOf(score));
     }
 
     /**
      * Displays the given score for Team B.
      */
     public void displayForTeamB(int score) {
-        TextView scoreView = scoreB;
-        scoreView.setText(String.valueOf(score));
+        scoreB.setText(String.valueOf(score));
     }
 
     /**
