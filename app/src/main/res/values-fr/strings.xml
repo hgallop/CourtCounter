@@ -5,6 +5,6 @@
     <string name="teamb">Équipe B</string>
     <string name="point3">+3 Points</string>
     <string name="point2">+2 Points</string>
-    <string name="free">" Lancer Franc"</string>
-    <string name="reset">" Réinitialiser"</string>
+    <string name="free">Lancer Franc</string>
+    <string name="reset">Réinitialiser</string>
 </resources>
