@@ -7,6 +7,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    public final String SCORE_TEAM_A = "scoreTeamA";
+    public final String SCORE_TEAM_B = "scoreTeamB";
+    public final String SCORE_ADD = "scoreAdd";
+
     int scoreTeamA = 0;
     int scoreTeamB = 0;
     int scoreAdd;
@@ -27,18 +31,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("scoreTeamA", scoreTeamA);
-        outState.putInt("scoreTeamB", scoreTeamB);
-        outState.putInt("scoreAdd", scoreAdd);
+        outState.putInt(SCORE_TEAM_A, scoreTeamA);
+        outState.putInt(SCORE_TEAM_B, scoreTeamB);
+        outState.putInt(SCORE_ADD, scoreAdd);
     }
 
     /** Restores app data on new state */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        scoreTeamA = savedInstanceState.getInt("scoreTeamA");
-        scoreTeamB = savedInstanceState.getInt("scoreTeamB");
-        scoreAdd = savedInstanceState.getInt("scoreAdd");
+        scoreTeamA = savedInstanceState.getInt(SCORE_TEAM_A);
+        scoreTeamB = savedInstanceState.getInt(SCORE_TEAM_B);
+        scoreAdd = savedInstanceState.getInt(SCORE_ADD);
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
     }
