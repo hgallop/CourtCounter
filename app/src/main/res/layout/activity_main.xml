@@ -22,15 +22,16 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/a_team"
                     style="@style/TextStyle.TeamStyle"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="@string/teama" />
+                    android:freezesText="true"
+                    android:fontFamily="sans-serif-medium" />
 
                 <TextView
                     android:id="@+id/team_a_score"
                     style="@style/TextStyle.ScoreStyle"
-                    android:fontFamily="sans-serif-light"
-                    android:text="@string/scoreForA" />
+                    android:freezesText="true"
+                    android:fontFamily="sans-serif-light" />
 
                 <Button
                     style="@style/ButtonStyle"
@@ -63,15 +64,16 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/b_team"
                     style="@style/TextStyle.TeamStyle"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="@string/teamb" />
+                    android:freezesText="true"
+                    android:fontFamily="sans-serif-medium" />
 
                 <TextView
                     android:id="@+id/team_b_score"
                     style="@style/TextStyle.ScoreStyle"
-                    android:fontFamily="sans-serif-light"
-                    android:text="@string/scoreForB" />
+                    android:freezesText="true"
+                    android:fontFamily="sans-serif-light" />
 
                 <Button
                     style="@style/ButtonStyle"

@@ -9,14 +9,20 @@ public class MainActivity extends AppCompatActivity {
 
     public final String SCORE_TEAM_A = "scoreTeamA";
     public final String SCORE_TEAM_B = "scoreTeamB";
-    public final String SCORE_ADD = "scoreAdd";
-
-    int scoreTeamA = 0;
-    int scoreTeamB = 0;
-    int scoreAdd;
+    public final String NAME_A = "nameA";
+    public final String Name_B = "nameB";
 
     TextView scoreA;
     TextView scoreB;
+    TextView aTeam;
+    TextView bTeam;
+
+    Team teamA;
+    Team teamB;
+
+    String nameA;
+    String nameB;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,65 +31,60 @@ public class MainActivity extends AppCompatActivity {
 
         scoreA = findViewById(R.id.team_a_score);
         scoreB = findViewById(R.id.team_b_score);
+        aTeam = findViewById(R.id.a_team);
+        bTeam = findViewById(R.id.b_team);
+
+        nameA = getResources().getString(R.string.teama);
+        nameB = getResources().getString(R.string.teamb);
+
+        teamA = new Team(nameA, 0, aTeam, scoreA);
+        teamB = new Team(nameB, 0, bTeam, scoreB);
+
+        teamA.nameDisplay(nameA);
+        teamB.nameDisplay(nameB);
+        teamA.scoreDisplay(teamA.getScore());
+        teamB.scoreDisplay(teamB.getScore());
     }
 
     /** Saves app data between states */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(SCORE_TEAM_A, scoreTeamA);
-        outState.putInt(SCORE_TEAM_B, scoreTeamB);
-        outState.putInt(SCORE_ADD, scoreAdd);
+        outState.putInt(SCORE_TEAM_A, teamA.getScore());
+        outState.putInt(SCORE_TEAM_B, teamB.getScore());
+        outState.putString(NAME_A, teamA.getName());
+        outState.putString(Name_B, teamB.getName());
     }
 
     /** Restores app data on new state */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        scoreTeamA = savedInstanceState.getInt(SCORE_TEAM_A);
-        scoreTeamB = savedInstanceState.getInt(SCORE_TEAM_B);
-        scoreAdd = savedInstanceState.getInt(SCORE_ADD);
-        displayForTeamA(scoreTeamA);
-        displayForTeamB(scoreTeamB);
+        teamA.setScore(savedInstanceState.getInt(SCORE_TEAM_A));
+        teamB.setScore(savedInstanceState.getInt(SCORE_TEAM_B));
+        teamA.setName(savedInstanceState.getString(NAME_A));
+        teamB.setName(savedInstanceState.getString(Name_B));
     }
 
     /**
      * Resets both scores to 0
      */
     public void resetAll(View view) {
-        scoreTeamA = 0;
-        scoreTeamB = 0;
-        displayForTeamA(scoreTeamA);
-        displayForTeamB(scoreTeamB);
-    }
-
-    /**
-     * Displays the given score for Team A.
-     */
-    public void displayForTeamA(int score) {
-        scoreA.setText(String.valueOf(score));
-    }
-
-    /**
-     * Displays the given score for Team B.
-     */
-    public void displayForTeamB(int score) {
-        scoreB.setText(String.valueOf(score));
+        teamA.setScore(0);
+        teamB.setScore(0);
+        teamA.scoreDisplay(teamA.getScore());
+        teamB.scoreDisplay(teamB.getScore());
     }
 
     /**
      * Calculates update for three point score. Displays updated score.
      */
     public void threePointsA(View view) {
-        scoreAdd = 3;
-        scoreTeamA += scoreAdd;
-        displayForTeamA(scoreTeamA);
+        teamA.threePoints(view);
     }
 
     public void threePointsB(View view) {
-        scoreAdd = 3;
-        scoreTeamB += scoreAdd;
-        displayForTeamB(scoreTeamB);
+        teamB.threePoints(view);
     }
 
 
@@ -91,15 +92,11 @@ public class MainActivity extends AppCompatActivity {
      * Calculates update for two point score. Displays updated score.
      */
     public void twoPointsA(View view) {
-        scoreAdd = 2;
-        scoreTeamA += scoreAdd;
-        displayForTeamA(scoreTeamA);
+        teamA.twoPoints(view);
     }
 
     public void twoPointsB(View view) {
-        scoreAdd = 2;
-        scoreTeamB += scoreAdd;
-        displayForTeamB(scoreTeamB);
+        teamB.twoPoints(view);
     }
 
 
@@ -107,14 +104,10 @@ public class MainActivity extends AppCompatActivity {
      * Calculates update for one point score. Displays updated score.
      */
     public void onePointA(View view) {
-        scoreAdd = 1;
-        scoreTeamA += scoreAdd;
-        displayForTeamA(scoreTeamA);
+        teamA.onePoint(view);
     }
 
     public void onePointB(View view) {
-        scoreAdd = 1;
-        scoreTeamB += scoreAdd;
-        displayForTeamB(scoreTeamB);
+        teamB.onePoint(view);
     }
 }
