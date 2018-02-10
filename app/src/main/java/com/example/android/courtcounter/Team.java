@@ -65,20 +65,17 @@ public class Team {
     }
 
     public void threePoints(View view) {
-        int scoreAdd = 3;
-        Score += scoreAdd;
+        Score += 3;
         scoreDisplay(Score);
     }
 
     public void twoPoints(View view) {
-        int scoreAdd = 2;
-        Score += scoreAdd;
+        Score += 2;
         scoreDisplay(Score);
     }
 
     public void onePoint(View view) {
-        int scoreAdd = 1;
-        Score += scoreAdd;
+        Score += 1;
         scoreDisplay(Score);
     }
 
