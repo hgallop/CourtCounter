@@ -10,62 +10,54 @@ import android.widget.TextView;
 
 public class Team {
 
+    //create constants for scoring
     private final int THREE_POINTS = 3;
     private final int TWO_POINTS = 2;
     private final int ONE_POINT = 1;
 
+    //create variables for object
     private String teamName;
     private int score;
 
-    public TextView nameView;
-    public TextView scoreView;
-
-    public Team(String teamName, int score, TextView nameView, TextView scoreView) {
+    //constructor for Team object
+    public Team(String teamName, int score) {
         this.teamName = teamName;
         this.score = score;
-        this.nameView= nameView;
-        this.scoreView = scoreView;
     }
 
-    //mutator
+    //mutator. allows name to be set.
     public void setName(String name){
         teamName = name;
     }
 
-    //accessor
+    //accessor. allows name to be accessed
     public String getName(){
         return teamName;
     }
 
+    //mutator. allows score to be set.
     public void setScore(int score){
         this.score = score;
     }
 
+    //accessor. allows score to be accessed.
     public int getScore(){
         return score;
     }
 
-    public void scoreDisplay(int score) {
-        scoreView.setText(String.valueOf(score));
-    }
-
-    public void nameDisplay(String name){
-        nameView.setText(name);
-    }
-
-    public void threePoints(View view) {
+    //moethod for scoring three points
+    public void threePoints() {
         score += THREE_POINTS;
-        scoreDisplay(score);
     }
 
-    public void twoPoints(View view) {
+    //method for scoring two points.
+    public void twoPoints() {
         score += TWO_POINTS;
-        scoreDisplay(score);
     }
 
-    public void onePoint(View view) {
+    //method for scoring one point.
+    public void onePoint() {
         score += ONE_POINT;
-        scoreDisplay(score);
     }
 
 }

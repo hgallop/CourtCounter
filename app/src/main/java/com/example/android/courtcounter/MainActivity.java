@@ -7,46 +7,53 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    public final String SCORE_TEAM_A = "scoreTeamA";
-    public final String SCORE_TEAM_B = "scoreTeamB";
-    public final String NAME_A = "nameA";
-    public final String Name_B = "nameB";
+    //creates keys for save and restore state methods.
+    static private final String SCORE_TEAM_A = "scoreTeamA";
+    static private final String SCORE_TEAM_B = "scoreTeamB";
+    static private final String NAME_A = "nameA";
+    static private final String Name_B = "nameB";
 
-    TextView scoreA;
-    TextView scoreB;
-    TextView aTeam;
-    TextView bTeam;
+    //creates variables for views
+    TextView scoreAView;
+    TextView scoreBView;
+    TextView aTeamNameView;
+    TextView bTeamNameView;
 
+    //creates variable for objects
     Team teamA;
     Team teamB;
 
-    String nameA;
-    String nameB;
-
+    //creates variables for team names
+    String teamAName;
+    String teamBName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        scoreA = findViewById(R.id.team_a_score);
-        scoreB = findViewById(R.id.team_b_score);
-        aTeam = findViewById(R.id.a_team);
-        bTeam = findViewById(R.id.b_team);
+        //initializes all views in one call
+        scoreAView = findViewById(R.id.team_a_score);
+        scoreBView = findViewById(R.id.team_b_score);
+        aTeamNameView = findViewById(R.id.a_team);
+        bTeamNameView = findViewById(R.id.b_team);
 
-        nameA = getResources().getString(R.string.teama);
-        nameB = getResources().getString(R.string.teamb);
+        //gets string resource for names. initializes name variables.
+        teamAName = getResources().getString(R.string.teama);
+        teamBName = getResources().getString(R.string.teamb);
 
-        teamA = new Team(nameA, 0, aTeam, scoreA);
-        teamB = new Team(nameB, 0, bTeam, scoreB);
+        //creates Team objects.
+        teamA = new Team(teamAName, 0);
+        teamB = new Team(teamBName, 0);
 
-        teamA.nameDisplay(teamA.getName());
-        teamB.nameDisplay(teamB.getName());
-        teamA.scoreDisplay(teamA.getScore());
-        teamB.scoreDisplay(teamB.getScore());
+        //diplays initial values
+        nameDisplayA(teamA.getName());
+        nameDisplayb(teamB.getName());
+        scoreDisplayA(teamA.getScore());
+        scoreDisplayB(teamB.getScore());
     }
 
-    /** Saves app data between states */
+    /** Saves app data on screen rotation*/
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -56,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putString(Name_B, teamB.getName());
     }
 
-    /** Restores app data on new state */
+    /** Restores app data on screen rotation */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
@@ -66,6 +73,26 @@ public class MainActivity extends AppCompatActivity {
         teamB.setName(savedInstanceState.getString(Name_B));
     }
 
+    //displays score for team a
+    public void scoreDisplayA(int score) {
+        scoreAView.setText(String.valueOf(score));
+    }
+
+    //displays score for team b
+    public void scoreDisplayB(int score) {
+        scoreBView.setText(String.valueOf(score));
+    }
+
+    //displays name for team a
+    public void nameDisplayA(String name){
+        aTeamNameView.setText(name);
+    }
+
+    //displays name for team b
+    public void nameDisplayb(String name){
+        bTeamNameView.setText(name);
+    }
+
     /**
      * Resets both scores to 0
      */
@@ -73,18 +100,21 @@ public class MainActivity extends AppCompatActivity {
         int restart = 0;
         teamA.setScore(restart);
         teamB.setScore(restart);
-        teamA.scoreDisplay(teamA.getScore());
-        teamB.scoreDisplay(teamB.getScore());
+        scoreDisplayA(teamA.getScore());
+        scoreDisplayB(teamB.getScore());
     }
 
     /**
      * Calculates update for three point score. Displays updated score.
      */
-    public void threePointsA(View view) { teamA.threePoints(view);
+    public void threePointsA(View view) {
+        teamA.threePoints();
+        scoreDisplayA(teamA.getScore());
     }
 
     public void threePointsB(View view) {
-        teamB.threePoints(view);
+        teamB.threePoints();
+        scoreDisplayB(teamB.getScore());
     }
 
 
@@ -92,11 +122,13 @@ public class MainActivity extends AppCompatActivity {
      * Calculates update for two point score. Displays updated score.
      */
     public void twoPointsA(View view) {
-        teamA.twoPoints(view);
+        teamA.twoPoints();
+        scoreDisplayA(teamA.getScore());
     }
 
     public void twoPointsB(View view) {
-        teamB.twoPoints(view);
+        teamB.twoPoints();
+        scoreDisplayB(teamB.getScore());
     }
 
 
@@ -104,10 +136,12 @@ public class MainActivity extends AppCompatActivity {
      * Calculates update for one point score. Displays updated score.
      */
     public void onePointA(View view) {
-        teamA.onePoint(view);
+        teamA.onePoint();
+        scoreDisplayA(teamA.getScore());
     }
 
     public void onePointB(View view) {
-        teamB.onePoint(view);
+        teamB.onePoint();
+        scoreDisplayB(teamB.getScore());
     }
 }
