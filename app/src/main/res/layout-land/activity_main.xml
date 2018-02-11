@@ -24,12 +24,14 @@
                 android:id="@+id/a_team"
                 style="@style/TextStyle.TeamStyle"
                 android:freezesText="true"
+                android:text="@string/teama"
                 android:fontFamily="sans-serif-medium" />
 
             <TextView
                 android:id="@+id/team_a_score"
                 style="@style/TextStyle.ScoreStyle"
                 android:freezesText="true"
+                android:text="@string/score"
                 android:fontFamily="sans-serif-light" />
 
             <Button
@@ -67,12 +69,14 @@
                 android:id="@+id/b_team"
                 style="@style/TextStyle.TeamStyle"
                 android:freezesText="true"
+                android:text="@string/teamb"
                 android:fontFamily="sans-serif-medium" />
 
             <TextView
                 android:id="@+id/team_b_score"
                 style="@style/TextStyle.ScoreStyle"
                 android:freezesText="true"
+                android:text="@string/score"
                 android:fontFamily="sans-serif-light" />
 
             <Button

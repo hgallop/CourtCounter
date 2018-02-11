@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         teamA = new Team(nameA, 0, aTeam, scoreA);
         teamB = new Team(nameB, 0, bTeam, scoreB);
 
-        teamA.nameDisplay(nameA);
-        teamB.nameDisplay(nameB);
+        teamA.nameDisplay(teamA.getName());
+        teamB.nameDisplay(teamB.getName());
         teamA.scoreDisplay(teamA.getScore());
         teamB.scoreDisplay(teamB.getScore());
     }
@@ -70,8 +70,9 @@ public class MainActivity extends AppCompatActivity {
      * Resets both scores to 0
      */
     public void resetAll(View view) {
-        teamA.setScore(0);
-        teamB.setScore(0);
+        int restart = 0;
+        teamA.setScore(restart);
+        teamB.setScore(restart);
         teamA.scoreDisplay(teamA.getScore());
         teamB.scoreDisplay(teamB.getScore());
     }
@@ -79,8 +80,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Calculates update for three point score. Displays updated score.
      */
-    public void threePointsA(View view) {
-        teamA.threePoints(view);
+    public void threePointsA(View view) { teamA.threePoints(view);
     }
 
     public void threePointsB(View view) {

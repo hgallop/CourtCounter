@@ -9,74 +9,63 @@ import android.widget.TextView;
  */
 
 public class Team {
-    private String Name;
-    private int Score;
 
-    private TextView DisplayName;
-    private TextView DisplayScore;
+    private final int THREE_POINTS = 3;
+    private final int TWO_POINTS = 2;
+    private final int ONE_POINT = 1;
 
-    public Team(String name, int score, TextView displayName, TextView displayScore) {
-        Name = name;
-        Score = score;
-        DisplayName = displayName;
-        DisplayScore = displayScore;
+    private String teamName;
+    private int score;
+
+    public TextView nameView;
+    public TextView scoreView;
+
+    public Team(String teamName, int score, TextView nameView, TextView scoreView) {
+        this.teamName = teamName;
+        this.score = score;
+        this.nameView= nameView;
+        this.scoreView = scoreView;
     }
 
     //mutator
     public void setName(String name){
-        Name = name;
+        teamName = name;
     }
 
     //accessor
     public String getName(){
-        return Name;
+        return teamName;
     }
 
     public void setScore(int score){
-        Score = score;
+        this.score = score;
     }
 
     public int getScore(){
-        return Score;
-    }
-
-    public void setDisplayName(TextView view){
-        DisplayName = view;
-    }
-
-    public TextView getDisplayName(){
-        return DisplayName;
-    }
-
-    public void setDisplayScore(TextView view){
-        DisplayScore = view;
-    }
-
-    public TextView getDisplayScore(TextView view){
-        return DisplayScore;
+        return score;
     }
 
     public void scoreDisplay(int score) {
-        DisplayScore.setText(String.valueOf(score));
+        scoreView.setText(String.valueOf(score));
     }
 
     public void nameDisplay(String name){
-        DisplayName.setText(name);
+        nameView.setText(name);
     }
 
     public void threePoints(View view) {
-        Score += 3;
-        scoreDisplay(Score);
+        score += THREE_POINTS;
+        scoreDisplay(score);
     }
 
     public void twoPoints(View view) {
-        Score += 2;
-        scoreDisplay(Score);
+        score += TWO_POINTS;
+        scoreDisplay(score);
     }
 
     public void onePoint(View view) {
-        Score += 1;
-        scoreDisplay(Score);
+        score += ONE_POINT;
+        scoreDisplay(score);
     }
 
 }

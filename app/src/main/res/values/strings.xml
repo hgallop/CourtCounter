@@ -2,8 +2,7 @@
     <string name="app_name">Court Counter</string>
     <string name="teama">Team A</string>
     <string name="teamb">Team B</string>
-    <string name="scoreForA" translatable="false">0</string>
-    <string name="scoreForB" translatable="false">0</string>
+    <string name="score" translatable="false">0</string>
     <string name="point3">+3 Points</string>
     <string name="point2">+2 Points</string>
     <string name="free">Free Throw</string>
