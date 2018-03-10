@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Primary theme color of the app (sets background color of app bar) -->
@@ -28,6 +28,7 @@
         <item name="android:layout_margin">@dimen/margin</item>
         <item name="android:textColor">@color/team</item>
         <item name="android:textSize">@dimen/team</item>
+        <item name="android:fontFamily" tools:targetApi="16">sans-serif-medium</item>
     </style>
 
     <style name="TextStyle.ScoreStyle">
@@ -35,5 +36,6 @@
         <item name="android:textSize">@dimen/score</item>
         <item name="android:textColor">@color/score</item>
         <item name="android:freezesText">true</item>
+        <item name="android:fontFamily" tools:targetApi="16">sans-serif-light</item>
     </style>
 </resources>
