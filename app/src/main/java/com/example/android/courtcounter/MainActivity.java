@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     static private final String SCORE_TEAM_A = "scoreTeamA";
     static private final String SCORE_TEAM_B = "scoreTeamB";
     static private final String NAME_A = "nameA";
-    static private final String Name_B = "nameB";
+    static private final String NAME_B = "nameB";
 
     //creates variables for views
     TextView scoreAView;
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt(SCORE_TEAM_A, teamA.getScore());
         outState.putInt(SCORE_TEAM_B, teamB.getScore());
         outState.putString(NAME_A, teamA.getName());
-        outState.putString(Name_B, teamB.getName());
+        outState.putString(NAME_B, teamB.getName());
     }
 
     /** Restores app data on screen rotation */
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         teamA.setScore(savedInstanceState.getInt(SCORE_TEAM_A));
         teamB.setScore(savedInstanceState.getInt(SCORE_TEAM_B));
         teamA.setName(savedInstanceState.getString(NAME_A));
-        teamB.setName(savedInstanceState.getString(Name_B));
+        teamB.setName(savedInstanceState.getString(NAME_B));
     }
 
     //displays score for team a

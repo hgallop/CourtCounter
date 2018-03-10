@@ -16,48 +16,48 @@ public class Team {
     private final int ONE_POINT = 1;
 
     //create variables for object
-    private String teamName;
-    private int score;
+    private String mTeamName;
+    private int mScore;
 
     //constructor for Team object
     public Team(String teamName, int score) {
-        this.teamName = teamName;
-        this.score = score;
+        mTeamName = teamName;
+        mScore = score;
     }
 
     //mutator. allows name to be set.
     public void setName(String name){
-        teamName = name;
+        mTeamName = name;
     }
 
     //accessor. allows name to be accessed
     public String getName(){
-        return teamName;
+        return mTeamName;
     }
 
     //mutator. allows score to be set.
     public void setScore(int score){
-        this.score = score;
+        mScore = score;
     }
 
     //accessor. allows score to be accessed.
     public int getScore(){
-        return score;
+        return mScore;
     }
 
     //moethod for scoring three points
     public void threePoints() {
-        score += THREE_POINTS;
+        mScore += THREE_POINTS;
     }
 
     //method for scoring two points.
     public void twoPoints() {
-        score += TWO_POINTS;
+        mScore += TWO_POINTS;
     }
 
     //method for scoring one point.
     public void onePoint() {
-        score += ONE_POINT;
+        mScore += ONE_POINT;
     }
 
 }
